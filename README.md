@@ -1,6 +1,6 @@
 # GitHub Plugin for Backstage
 
-![GitHub Plugin for Backstage by Roadie](https://raw.githubusercontent.com/RoadieHQ/backstage-plugin-github/master/docs/roadie-backstage-github-plugin.jpg)
+![GitHub Plugin for Backstage by Roadie](https://github.com/RoadieHQ/backstage-plugin-github/blob/master/docs/roadie-backstage-github-plugin.jpg)
 
 ## Plugin Setup
 
@@ -40,9 +40,7 @@ const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
 
 ## Widgets setup
 
-![Widgets for GitHub Plugin by Roadie](https://raw.githubusercontent.com/RoadieHQ/backstage-plugin-github/master/docs/roadie-backstage-github-widgets.jpg)
-
-1. You must install plugin by following the steps above to add widget to your Overview
+1. You must install plugin by following the steps above to add widget to your Overview.
 
 2. There are five widgets to choose from right now:
   * Pull Requests
