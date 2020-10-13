@@ -48,8 +48,8 @@ const ReleasesCard: FC<LanguageCardProps> = ({ entity }) => {
   const { value, loading, error } = useAsync(async (): Promise<Release[]> => {
     const octokit = new Octokit();
     const response = await octokit.request('GET /repos/{owner}/{repo}/releases', {
-      owner: 'spotify',
-      repo: 'backstage',
+      owner,
+      repo,
     });
     const data = await response.data;
     return data.slice(0, 5);
