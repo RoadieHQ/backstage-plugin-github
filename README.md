@@ -1,6 +1,6 @@
 # GitHub Plugin for Backstage
 
-![GitHub Plugin for Backstage by Roadie](https://raw.githubusercontent.com/RoadieHQ/backstage-plugin-github/master/docs/roadie-backstage-github-plugin.jpg)
+![GitHub Plugin for Backstage by Roadie](https://github.com/RoadieHQ/backstage-plugin-github/blob/master/docs/roadie-backstage-github-plugin.jpg?raw=true)
 
 ## Plugin Setup
 
