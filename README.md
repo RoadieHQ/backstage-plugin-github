@@ -61,7 +61,7 @@ const WebsiteEntityPage = ({ entity }: { entity: Entity }) => (
 5. Run backstage app with `yarn start` and navigate to services tabs.
 
 ## Widgets setup
-t
+
 1. You must install plugin first (this is step is necessary only if you don't installed plugin in previous step).
 
 ```bash
