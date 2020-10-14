@@ -28,6 +28,13 @@ const useStyles = makeStyles(theme => ({
     '& + .MuiCard-root': {
       marginTop: theme.spacing(3),
     }
+  },
+  link: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  icon: {
+    marginRight: theme.spacing(1),
   }
 }));
 
@@ -74,10 +81,8 @@ const ReleasesCard: FC<LanguageCardProps> = ({ entity }) => {
       <List>
         {value.map(release => (
           <ListItem key={release.id}>
-            <Link href={release.html_url} color="inherit" target="_blank" rel="noopener noreferrer">
-              <LocalOfferOutlinedIcon fontSize="inherit" /> {release.tag_name}
-              {/* by {release.author.login} */}
-              {/* {release.prerelease ? <Chip color="primary" size="small" label="Pre-release" /> : <Chip color="secondary" size="small" />} */}
+            <Link href={release.html_url} className={classes.link} color="inherit" target="_blank" rel="noopener noreferrer">
+              <LocalOfferOutlinedIcon fontSize="inherit" className={classes.icon} /> {release.tag_name}
             </Link>
           </ListItem>
         ))}

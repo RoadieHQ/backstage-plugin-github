@@ -17,21 +17,32 @@ import React from 'react';
 import { Entity } from '@backstage/catalog-model';
 import { Routes, Route } from 'react-router';
 import { MissingAnnotationEmptyState } from '@backstage/core';
-import { rootRouteRef } from '../plugin';
-import GitHubPage from './GitHubPage';
+import { insightsRouteRef, pullRequestRouteRef } from '../plugin';
 import { GITHUB_PULL_REQUESTS_ANNOTATION } from './useProjectName';
+import InsightsTab from './InsightsTab';
+import PullRequestsTab from './PullRequestsTab';
 
 export const isPluginApplicableToEntity = (entity: Entity) =>
   Boolean(entity.metadata.annotations?.[GITHUB_PULL_REQUESTS_ANNOTATION]);
 
-export const Router = ({ entity }: { entity: Entity }) =>
-  !isPluginApplicableToEntity(entity) ? (
-    <MissingAnnotationEmptyState annotation={GITHUB_PULL_REQUESTS_ANNOTATION} />
-  ) : (
+export const InsightsRouter = ({ entity }: { entity: Entity }) => !isPluginApplicableToEntity(entity) 
+  ? <MissingAnnotationEmptyState annotation={GITHUB_PULL_REQUESTS_ANNOTATION} />
+  : (
     <Routes>
       <Route
-        path={`/${rootRouteRef.path}`}
-        element={<GitHubPage entity={entity} />}
+        path={`/${insightsRouteRef.path}`}
+        element={<InsightsTab entity={entity} />}
+      />
+    </Routes>
+  );
+
+export const PullRequestsRouter = ({ entity }: { entity: Entity }) => !isPluginApplicableToEntity(entity) 
+  ? <MissingAnnotationEmptyState annotation={GITHUB_PULL_REQUESTS_ANNOTATION} />
+  : (
+    <Routes>
+      <Route
+        path={`/${pullRequestRouteRef.path}`}
+        element={<PullRequestsTab entity={entity} />}
       />
     </Routes>
   );

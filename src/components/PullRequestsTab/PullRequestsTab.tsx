@@ -16,15 +16,29 @@
 
 import React, { FC } from 'react';
 import { Grid } from '@material-ui/core';
+import {
+  Page,
+  pageTheme,
+  Content,
+  ContentHeader,
+  SupportButton,
+} from '@backstage/core';
 import { PullRequestsTable } from '../PullRequestsTable';
 import { Entity } from '@backstage/catalog-model';
 
 const PullRequestsTab: FC<{ entity: Entity }> = ({ entity }) => (
-  <Grid container spacing={3} direction="column">
-    <Grid item>
-      <PullRequestsTable entity={entity} />
-    </Grid>
-  </Grid>
+  <Page theme={pageTheme.tool}>
+    <Content>
+      <ContentHeader title="GitHub Pull Requests">
+        <SupportButton>Plugin to show GitHub Pull Requests</SupportButton>
+      </ContentHeader>
+      <Grid container spacing={3} direction="column">
+        <Grid item>
+          <PullRequestsTable entity={entity} />
+        </Grid>
+      </Grid>
+    </Content>
+  </Page>
 );
 
 export default PullRequestsTab;

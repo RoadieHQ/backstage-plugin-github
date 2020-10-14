@@ -21,9 +21,14 @@ import {
 } from '@backstage/core';
 import { githubPullRequestsApiRef, GithubPullRequestsClient } from './api';
 
-export const rootRouteRef = createRouteRef({
+export const insightsRouteRef = createRouteRef({
   path: '',
-  title: 'GitHub Plugin',
+  title: 'GitHub Insights',
+});
+
+export const pullRequestRouteRef = createRouteRef({
+  path: '',
+  title: 'GitHub Pull Requests',
 });
 
 export const plugin = createPlugin({

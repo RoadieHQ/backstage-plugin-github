@@ -30,6 +30,7 @@ import { Entity } from '@backstage/catalog-model';
 
 const useStyles = makeStyles(theme => ({
   infoCard: {
+    minHeight: '219px',
     '& + .MuiCard-root': {
       marginTop: theme.spacing(3),
     }

@@ -15,6 +15,13 @@
  */
 import React, { FC } from 'react';
 import { Grid } from '@material-ui/core';
+import {
+  Page,
+  pageTheme,
+  Content,
+  ContentHeader,
+  SupportButton,
+} from '@backstage/core';
 import { Entity } from '@backstage/catalog-model';
 import { ContributorsCard, ReadMeCard, LanguagesCard, ReleasesCard, PullRequestsStatsCard } from '../Widgets';
 
@@ -22,20 +29,24 @@ type InsightsTabProps = {
   entity: Entity;
 };
 
-const InsightsTab: FC<InsightsTabProps> = ({ entity }) => {
-  const projectSlug = entity.metadata?.annotations?.['github.com/project-slug'];
-  return projectSlug ? (
-    <Grid container spacing={3} direction="row" alignItems="stretch">
-      <Grid item sm={12} md={6} lg={4}>
-        <ContributorsCard entity={entity} />
-        <LanguagesCard entity={entity} />
-        <PullRequestsStatsCard entity={entity} />
-        <ReleasesCard entity={entity} />
+const InsightsTab: FC<InsightsTabProps> = ({ entity }) => (
+  <Page theme={pageTheme.tool}>
+    <Content>
+      <ContentHeader title="GitHub Insights">
+        <SupportButton>Plugin to show GitHub Insights</SupportButton>
+      </ContentHeader>
+      <Grid container spacing={3} direction="row" alignItems="stretch">
+        <Grid item sm={12} md={6} lg={4}>
+          <ContributorsCard entity={entity} />
+          <LanguagesCard entity={entity} />
+          <PullRequestsStatsCard entity={entity} />
+          <ReleasesCard entity={entity} />
+        </Grid>
+        <Grid item sm={12} md={6} lg={8}>
+          <ReadMeCard entity={entity} />
+        </Grid>
       </Grid>
-      <Grid item sm={12} md={6} lg={8}>
-        <ReadMeCard entity={entity} />
-      </Grid>
-    </Grid>
-  ) : null;
-};
+    </Content>
+  </Page>
+);
 export default InsightsTab;

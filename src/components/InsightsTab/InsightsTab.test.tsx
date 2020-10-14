@@ -15,7 +15,7 @@
  */
 import React from 'react';
 import { render } from '@testing-library/react';
-import InsightsPage from './InsightsTab';
+import InsightsTab from './InsightsTab';
 import { ThemeProvider } from '@material-ui/core';
 import { lightTheme } from '@backstage/theme';
 
@@ -23,7 +23,7 @@ describe('Insights Tab', () => {
   it('should render', () => {
     const rendered = render(
       <ThemeProvider theme={lightTheme}>
-        <InsightsPage
+        <InsightsTab
           entity={{
             apiVersion: '1',
             kind: 'a',
