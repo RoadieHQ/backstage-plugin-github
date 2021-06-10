@@ -1,3 +1,15 @@
+# Deprecation notice
+
+This plugin was intended to be a convenience wrapper around the following plugins:
+
+ 1. [@roadiehq/backstage-plugin-github-insights](https://github.com/RoadieHQ/backstage-plugin-github-insights)
+ 2. [@roadiehq/backstage-plugin-github-pull-requests](https://github.com/RoadieHQ/backstage-plugin-github-pull-requests)
+ 3. [@roadiehq/backstage-plugin-security-insights](https://github.com/RoadieHQ/backstage-plugin-security-insights)
+
+ It doesn't have any features of it's own. It simply re-exports the features from the plugins above.
+
+ **This plugin is not maintained.** Please use the plugins above individually instead.
+
 # GitHub Plugin for Backstage
 
 ![GitHub Plugin for Backstage by Roadie](https://raw.githubusercontent.com/RoadieHQ/backstage-plugin-github/main/docs/roadie-backstage-github-plugin.jpg)
